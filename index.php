@@ -1,8 +1,8 @@
 <?
 	$_SERVER['DOCUMENT_ROOT'] = dirname(__FILE__);
 
-/*	ini_set('display_errors', 1);
-error_reporting(E_ALL); */
+/*	ini_set('display_errors', 1); */
+	error_reporting(0);
 
 
 	$mode=$_GET['mode'];
