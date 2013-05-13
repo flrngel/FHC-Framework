@@ -1,8 +1,8 @@
 <?
 	$_SERVER['DOCUMENT_ROOT'] = dirname(__FILE__);
-
+	
 /*	ini_set('display_errors', 1); */
-	error_reporting(0);
+	//error_reporting(0);
 
 
 	$mode=$_GET['mode'];
@@ -12,9 +12,10 @@
 	$job=$path.$mode.".php";
 
 	if( !preg_match("/^".preg_quote($path,'/')."/" , realpath($job)) ) exit;
-	
+
 	$res=Array();
 
-  include "functions.php";
+	foreach(glob("lib/include/*.*") as $filename) include($filename);
+
   include $job;
 ?>
