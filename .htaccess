@@ -1,4 +1,4 @@
 AddDefaultCharset UTF-8
 RewriteEngine On
 RewriteCond %{REQUEST_URI}	!^/$
-RewriteRule ^([a-zA-Z\/0-9]+)$	/index.php?mode=$1	[L]
+RewriteRule ^([a-zA-Z\/0-9_\-]+)$	/index.php?mode=$1	[L]
