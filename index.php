@@ -5,11 +5,11 @@
 	//error_reporting(0);
 
 
-	$mode=$_GET['mode'];
-	if( empty($mode) ) $mode='home';
+	$page=$_GET['page'];
+	if( empty($page) ) $page='home';
 
 	$path=$_SERVER['DOCUMENT_ROOT']."/app/controllers/";
-	$job=$path.$mode.".php";
+	$job=$path.$page.".php";
 
 	if( !preg_match("/^".preg_quote($path,'/')."/" , realpath($job)) ) exit;
 
