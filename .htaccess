@@ -1,4 +1,5 @@
 AddDefaultCharset UTF-8
 RewriteEngine On
 RewriteCond %{REQUEST_URI}	!^/$
+RewriteRule ^assets/([a-zA-Z0-9\/_\-\.]+)$  /app/assets/$1  [L]
 RewriteRule ^([a-zA-Z\/0-9_\-]+)$	/index.php?page=$1	[L,QSA]
