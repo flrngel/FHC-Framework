@@ -63,6 +63,27 @@ class DBMysql{
 		return $this->next_fetch_object();
 	}
 
+	public function fetch_all_rows(){
+		while($tmp=$this->nfr()){
+			$tmp2[]=$tmp;
+		}
+		return $tmp2;
+	}
+
+	public function fetch_all_arrays(){
+		while($tmp=$this->nfa()){
+			$tmp2[]=$tmp;
+		}
+		return $tmp2;
+	}
+
+	public function fetch_all_objects(){
+		while($tmp=$this->nfo()){
+			$tmp2[]=$tmp;
+		}
+		return $tmp2;
+	}
+
 	public function result_array_all(){
 		$tmp = Array();
 		$i=0;
