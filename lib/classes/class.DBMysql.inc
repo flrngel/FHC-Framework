@@ -126,7 +126,7 @@ class DBMysql{
      $this->Record = @mysqli_fetch_object($this->Query_ID);
      $this->Errno = mysqli_errno( $this->Link_ID );
      $this->Error = mysqli_error( $this->Link_ID );
-     $stat = is_array($this->Record);
+     $stat = is_object($this->Record);
      if (!$stat) {
        mysqli_free_result($this->Query_ID);
        $this->Query_ID = 0;
