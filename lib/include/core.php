@@ -1,5 +1,6 @@
 <?
 	function render($filename,$layout="default.html"){
+		define("__RENDERED__",true);
 		global $res;
 		if( $_REQUEST['dataType'] == "json" )
 		{

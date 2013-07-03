@@ -1,14 +1,15 @@
 <?
 	$_SERVER['DOCUMENT_ROOT'] = dirname(__FILE__);
 	
-/*	ini_set('display_errors', 1); */
-	//error_reporting(0);
+	/*ini_set('display_errors', 1); 
+	error_reporting(E_ALL^E_NOTICE^E_WARNING);*/
 
 
 	$page=$_GET['page'];
 	if( empty($page) ) $page='home';
 
 	$path=$_SERVER['DOCUMENT_ROOT']."/app/controllers/";
+	$viewpath_default=$page.".html";
 	$job=$path.$page.".php";
 
 	if( !preg_match("/^".preg_quote($path,'/')."/" , realpath($job)) ) exit;
@@ -18,4 +19,7 @@
 	foreach(glob("lib/include/*.*") as $filename) include($filename);
 
 	include $job;
+	if( !defined("__RENDERED__") ){
+		render($viewpath_default);
+	}
 ?>
