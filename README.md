@@ -12,7 +12,7 @@ git
 
 Apache with mod_rewrite
 
-PHP ( >= 5.1 maybe )
+PHP ( >= 5.3.0 )
 
 Installation
 ===============
