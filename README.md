@@ -21,6 +21,8 @@ All you have to do is,
 
 git clone https://github.com/flrngel/FHC-Framework
 
+./install.sh
+
 How to Update
 ===============
 

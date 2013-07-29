@@ -6,7 +6,7 @@
 
 
 	$page=$_GET['page'];
-	if( empty($page) ) $page='home';
+	if( empty($page) ) $page='index';
 
 	$path=$_SERVER['DOCUMENT_ROOT']."/app/controllers/";
 	$viewpath_default=$page.".html";
