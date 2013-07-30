@@ -1,5 +1,6 @@
 #!/bin/sh
 mkdir app
+echo "Deny from all" > app/.htaccess
 mkdir app/assets
 mkdir app/assets/images
 mkdir app/assets/scripts
