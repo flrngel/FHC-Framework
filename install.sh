@@ -2,6 +2,7 @@
 mkdir app
 echo "Deny from all" > app/.htaccess
 mkdir app/assets
+echo "Allow from all" > app/assets/.htaccess
 mkdir app/assets/images
 mkdir app/assets/scripts
 mkdir app/assets/styles
