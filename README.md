@@ -26,7 +26,7 @@ git clone https://github.com/flrngel/FHC-Framework
 How to Update
 ===============
 
-git pull ( if you <b>DID NOT</b> modified some framework filed )
+git pull ( if you <b>DID NOT</b> modify some framework files )
 
 or if you modified FHC-Framework files.. ( not recommended )
 
