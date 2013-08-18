@@ -15,6 +15,7 @@
 	if( !is_file($job) ){
 		if( is_dir($path.$page) ){
 			$job=$path.$page."/index.php";
+			$viewpath_default=$page."/index.html";
 		}
 	}
 
