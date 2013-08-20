@@ -1,6 +1,6 @@
 <?
 spl_autoload_register(function($class){
-	$file = $_SERVER['DOCUMENT_ROOT']."/lib/classes/class.$class.php";
+	$file = $_SERVER['DOCUMENT_ROOT']."/lib/classes/$class.php";
 	if( !file_exists($file) ){
 		echo "there's no class : $class , ".$_SERVER['PHP_SELF'];
 		return 0;

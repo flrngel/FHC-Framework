@@ -13,5 +13,3 @@ echo "Hello World" > app/views/index.html
 mkdir app/views/layouts
 echo \<\?\=\$contents\?\> > app/views/layouts/default.html
 cp .htaccess.original .htaccess
-mv lib/classes/disabled.class.DBMysql.php lib/classes/class.DBMysql.php
-git update-index --assume-unchanged lib/classes/disabled.class.DBMysql.php
