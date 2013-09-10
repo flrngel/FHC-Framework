@@ -3,7 +3,7 @@ session_start();
 function render($filename,$layout="default.html"){
 	define("__RENDERED__",true);
 	global $res;
-	if( $_REQUEST['dataType'] == "json" )
+	if( $_REQUEST['fhc_dataType'] == "json" )
 	{
 		echo json_encode($res);
 		return;

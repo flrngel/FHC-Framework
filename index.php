@@ -5,7 +5,7 @@
 	error_reporting(E_ALL^E_NOTICE^E_WARNING);
 
 
-	$page=$_GET['page'];
+	$page=$_GET['fhc_page'];
 	if( empty($page) ) $page='index';
 
 	$path=$_SERVER['DOCUMENT_ROOT']."/app/controllers/";
