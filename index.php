@@ -1,8 +1,10 @@
 <?
 $_SERVER['DOCUMENT_ROOT'] = dirname(__FILE__);
 
-ini_set('display_errors', 1); 
-error_reporting(E_ALL^E_NOTICE^E_WARNING);
+if( file_exists("DEBUG") ){
+	ini_set('display_errors', 1); 
+	error_reporting(E_ALL^E_NOTICE^E_WARNING);
+}
 
 
 $page=$_GET['fhc_page'];
@@ -23,7 +25,16 @@ if( !preg_match("/^".preg_quote($path,'/')."/" , realpath($job)) ) exit;
 
 $res=Array();
 
-foreach(glob("lib/include/*.*") as $filename) include($filename);
+// Preload from defined
+$preload_list=array("lib/include/class_loader.php","lib/include/core.php");
+foreach($preload_list as $filename){
+	include($filename);
+}
+
+foreach(glob("lib/include/*.*") as $filename){
+	if( in_array($filename,$preload_list ) ) continue;
+	include($filename);
+}
 
 include $job;
 
