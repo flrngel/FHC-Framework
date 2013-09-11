@@ -1,4 +1,14 @@
 {
+	"name": "fhc/framework",
+	"description": "FHC(FLRngel Hates Coding) PHP Framework",
+	"authors": [
+		{
+		"name": "flrngel",
+		"email": "flrngel@gmail.com"
+	}
+	],
+	"require": {
+	},
 	"version":"1.0.0",
 	"config":{
 		"vendor-dir":"lib/classes/"
