@@ -23,7 +23,16 @@ if( !preg_match("/^".preg_quote($path,'/')."/" , realpath($job)) ) exit;
 
 $res=Array();
 
-foreach(glob("lib/include/*.*") as $filename) include($filename);
+// Preload from defined
+$preload_list=array("lib/include/class_loader.php","lib/include/core.php");
+foreach($preload_list as $filename){
+	include($filename);
+}
+
+foreach(glob("lib/include/*.*") as $filename){
+	if( in_array($filename,$preload_list ) ) continue;
+	include($filename);
+}
 
 include $job;
 
