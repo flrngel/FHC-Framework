@@ -1,4 +1,5 @@
 <?
+echo "1";
 session_start();
 function render($filename,$layout="default.html"){
 	define("__RENDERED__",true);
