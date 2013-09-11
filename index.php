@@ -1,8 +1,10 @@
 <?
 $_SERVER['DOCUMENT_ROOT'] = dirname(__FILE__);
 
-ini_set('display_errors', 1); 
-error_reporting(E_ALL^E_NOTICE^E_WARNING);
+if( file_exists("DEBUG") ){
+	ini_set('display_errors', 1); 
+	error_reporting(E_ALL^E_NOTICE^E_WARNING);
+}
 
 
 $page=$_GET['fhc_page'];
