@@ -41,4 +41,6 @@ include $job;
 if( !defined("__RENDERED__") ){
 	render($viewpath_default);
 }
+
+define("__FHC_END__",true);
 ?>
