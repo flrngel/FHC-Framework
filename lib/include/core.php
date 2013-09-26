@@ -3,11 +3,14 @@ session_start();
 function render($filename,$layout="default.html"){
 	define("__RENDERED__",true);
 	global $res;
-	if( $_REQUEST['fhc_dataType'] == "json" )
-	{
+	if( $_REQUEST['fhc_dataType'] == "json" ){
 		echo json_encode($res);
 		return;
+	}else if( $_REQUEST['fhc_dataType'] == 'html' ){
+		// <URL>.html means no layout
+		$layout=null;
 	}
+
 	$path=$_SERVER['DOCUMENT_ROOT']."/app/views/$filename";
 	$path_layout=$_SERVER['DOCUMENT_ROOT']."/app/views/layouts/".$layout;
 
