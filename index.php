@@ -4,6 +4,9 @@ $_SERVER['DOCUMENT_ROOT'] = dirname(__FILE__);
 if( file_exists("DEBUG") ){
 	ini_set('display_errors', 1); 
 	error_reporting(E_ALL^E_NOTICE^E_WARNING);
+}else{
+	ini_set('display_errors', 0); 
+	error_reporting(0);
 }
 
 
