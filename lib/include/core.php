@@ -5,12 +5,9 @@ function render($filename,$layout="default.html"){
 	global $res;
 	if( $_REQUEST['fhc_dataType'] == "json" ){
 		if( $_REQUEST['var'] ){
-			$var=json_decode($_REQUEST['var']);
-			// usage: var=["asdf","bcdef"] or var="asdf"  means $res[var]
-			for($var as $key => $val ){
-				if( $res[$val] ){
-					echo json_encode($res[$val]);
-				}
+			$var=$_REQUEST['var'];
+			if( $res[$var] ){
+				echo json_encode($res[$var]);
 			}
 		}else{
 			echo json_encode($res);
