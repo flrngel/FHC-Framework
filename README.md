@@ -26,14 +26,6 @@ git clone https://github.com/flrngel/FHC-Framework
 How to Update
 ===============
 
-git pull ( if you <b>DID NOT</b> modify some framework files )
+use [FHC-Gaia](https://github.com/flrngel/FHC-Gaia)
 
-or if you modified FHC-Framework files.. ( not recommended )
-
-git stash
-
-git pull
-
-git stash apply
-
-OR use FHC-Gaia
+- gaia update <project name>
