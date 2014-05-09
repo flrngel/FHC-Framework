@@ -3,9 +3,9 @@ session_start();
 function render($filename,$layout="default.html"){
 	define("__RENDERED__",true);
 	global $res;
-	if( $_REQUEST['fhc_dataType'] == "json" ){
-		if( $_REQUEST['var'] ){
-			$var=$_REQUEST['var'];
+	if( $_GET['fhc_dataType'] === "json" ){
+		if( $_GET['var'] ){
+			$var=$_GET['var'];
 			if( $res[$var] ){
 				echo json_encode($res[$var]);
 			}
@@ -13,7 +13,17 @@ function render($filename,$layout="default.html"){
 			echo json_encode($res);
 		}
 		return;
-	}else if( $_REQUEST['fhc_dataType'] == 'html' ){
+	}else if( $_GET['fhc_dataType'] === "jsonp" ){
+		if( $_GET['var'] ){
+			$var=$_GET['var'];
+			if( $res[$var] ){
+				echo $_GET['callback']."(".json_encode($res[$var]).")";
+			}
+		}else{
+			echo $_GET['callback']."(".json_encode($res).")";
+		}
+		return;
+	}else if( $_GET['fhc_dataType'] === "html" ){
 		// <URL>.html means no layout
 		$layout=null;
 	}

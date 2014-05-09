@@ -5,5 +5,6 @@ RewriteRule .+ - [L]
 RewriteCond %{REQUEST_URI}	!^$
 RewriteRule ^assets/([a-zA-Z0-9\/_\-\.]+)$  app/assets/$1  [L]
 RewriteRule ^([a-zA-Z\/0-9_\-]+).json$	index.php?fhc_page=$1&fhc_dataType=json	[L,QSA]
+RewriteRule ^([a-zA-Z\/0-9_\-]+).jsonp$	index.php?fhc_page=$1&fhc_dataType=jsonp	[L,QSA]
 RewriteRule ^([a-zA-Z\/0-9_\-]+).html$	index.php?fhc_page=$1&fhc_dataType=html	[L,QSA]
 RewriteRule ^([a-zA-Z\/0-9_\-]+)$	index.php?fhc_page=$1	[L,QSA]
