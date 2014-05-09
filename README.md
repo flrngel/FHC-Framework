@@ -1,31 +1,29 @@
-FHC-Framework
-=============
+# FHC-Framework
 
 FHC(FLRngel Hates Coding) PHP Framework
 
 The framework using MVC Model, rails folder structure(about 80%), and ultra easy to use.
 
-Requirements
-===============
+# Requirements
 
 git
 
-Apache with mod_rewrite
+Apache(mod_rewrite)
 
 PHP ( >= 5.3.0 )
 
-Installation
-===============
+# Installation
 
-All you have to do is,
+    git clone https://github.com/flrngel/FHC-Framework <project name>
+    cd <project name>
+    ./install.sh
 
-git clone https://github.com/flrngel/FHC-Framework
+or use [FHC-Gaia](https://github.com/flrngel/FHC-Gaia)
 
-./install.sh
+    gaia new <project name>
 
-How to Update
-===============
+# How to Update
 
 use [FHC-Gaia](https://github.com/flrngel/FHC-Gaia)
 
-- gaia update <project name>
+    gaia update <project name>

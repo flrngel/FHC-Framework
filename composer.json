@@ -9,7 +9,7 @@
 	],
 	"require": {
 	},
-	"version":"v1.3.4",
+	"version":"v1.4.0",
 	"config":{
 		"vendor-dir":"lib/classes/"
 	}
