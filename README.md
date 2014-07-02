@@ -52,7 +52,7 @@ or use [FHC-Gaia](https://github.com/flrngel/FHC-Gaia)
 
 ### Routings
 
-just create `app/controllers/<dir>/<filename>.php` and access as `GET(POST) /<dir>/<filename>.php`
+just create `app/controllers/<dir>/<filename>.php` and access as `GET(POST) /<dir>/<filename>`
 
 ### $res variable
 
