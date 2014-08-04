@@ -50,6 +50,14 @@ or use [FHC-Gaia](https://github.com/flrngel/FHC-Gaia)
 
 ## Usage
 
+### .env file
+
+This is inspired from [dotfiles](https://github.com/mathiasbynens/dotfiles)
+
+FHC-Framework first loads `$_SERVER['DOCUMENT_ROOT']/.env` json file and decodes to `$_ENV` variable
+
+as `$_ENV` is global(php default), you can use it everywhere under FHC-Framework
+
 ### Routings
 
 just create `app/controllers/<dir>/<filename>.php` and access as `GET(POST) /<dir>/<filename>`
