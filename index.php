@@ -1,14 +1,20 @@
 <?
 $_SERVER['DOCUMENT_ROOT'] = dirname(__FILE__);
 
-if( file_exists("DEBUG") ){
+// load .env file
+$_ENV_backup=$_ENV;
+$env_json=file_get_contents("$_SERVER[DOCUMENT_ROOT]/.env");
+$env_json=json_decode(trim($env_json),true); 
+$_ENV=$_ENV+$env_json;
+unset($env_json);
+
+if( $_ENV['DEBUG'] === true || file_exists("DEBUG") ){
 	ini_set('display_errors', 1); 
 	error_reporting(E_ALL^E_NOTICE^E_WARNING);
 }else{
 	ini_set('display_errors', 0); 
 	error_reporting(0);
 }
-
 
 $page=$_GET['fhc_page'];
 if( empty($page) ) $page='index';
