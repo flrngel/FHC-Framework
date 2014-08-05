@@ -16,6 +16,7 @@ if [ ! -d app ]; then
 	echo "Hello World" > app/views/index.html
 	mkdir app/views/layouts
 	echo \<\?\=\$contents\?\> > app/views/layouts/default.html
+	echo "{}" > .env
 fi
 
 if [ ! -f .htaccess ]; then
