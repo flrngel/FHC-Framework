@@ -47,6 +47,8 @@ foreach(glob("lib/include/*.*") as $filename){
 
 include $job;
 
+define("FHC_ENABLE_JSONPAGE", false);
+
 if( !defined("__RENDERED__") ){
 	render($viewpath_default);
 }
