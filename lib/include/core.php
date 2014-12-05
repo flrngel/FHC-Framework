@@ -3,7 +3,7 @@ session_start();
 function render($filename,$layout="default.html"){
 	define("__RENDERED__",true);
 	global $res;
-	if( $_GET['fhc_dataType'] === "json" ){
+	if( FHC_ENABLE_JSONPAGE == true && $_GET['fhc_dataType'] === "json" ){
 		if( $_GET['var'] ){
 			$var=$_GET['var'];
 			if( $res[$var] ){
@@ -13,7 +13,7 @@ function render($filename,$layout="default.html"){
 			echo json_encode($res);
 		}
 		return;
-	}else if( $_GET['fhc_dataType'] === "jsonp" ){
+	}else if( FHC_ENABLE_JSONPAGE == true && $_GET['fhc_dataType'] === "jsonp" ){
 		if( $_GET['var'] ){
 			$var=$_GET['var'];
 			if( $res[$var] ){
