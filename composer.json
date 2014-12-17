@@ -1,0 +1,16 @@
+{
+	"name": "fhc/framework",
+	"description": "The framework dedicated to developers for who don't code",
+	"authors": [
+		{
+		"name": "flrngel",
+		"email": "flrngel@gmail.com"
+	}
+	],
+	"require": {
+	},
+	"version":"v2.0.0",
+	"config":{
+		"vendor-dir":"lib/classes/"
+	}
+}
