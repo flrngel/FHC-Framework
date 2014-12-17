@@ -11,6 +11,6 @@
 	},
 	"version":"v2.0.0",
 	"config":{
-		"vendor-dir":"lib/classes/"
+		"vendor-dir":"vendor/"
 	}
 }
