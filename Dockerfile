@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM ubuntu:trusty
 MAINTAINER flrngel <flrngel@gmail.com>
 
 # Install base packages
@@ -18,13 +18,16 @@ RUN sed -i "s/variables_order.*/variables_order = \"EGPCS\"/g" /etc/php5/apache2
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Add image configuration and scripts
-ADD lib/core/runscript /run.sh
+ADD lib/docker/runscript /run.sh
 RUN chmod 755 /*.sh
 
 # Configure /app folder with sample app
 RUN mkdir -p /app && rm -fr /var/www/html && ln -s /app /var/www/html
 ADD . /app
+WORKDIR /app
+
+ADD lib/docker/apache.conf /etc/apache2/sites-enabled/fhc-default.conf
+RUN a2enmod rewrite
 
 EXPOSE 80
-WORKDIR /app
 CMD ["/run.sh"]
