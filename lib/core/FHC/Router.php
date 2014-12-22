@@ -5,6 +5,7 @@
  * @copyright	Copyright (c), 2013 Bram(us) Van Damme
  * @license		MIT public license
  */
+namespace FHC;
 class Router {
 
 

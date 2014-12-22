@@ -1,14 +1,35 @@
 <?php
-spl_autoload_register(function($class){
-	$class=str_replace("\\","/",$class);
-	$file = dirname(__FILE__)."/$class.php";
-	if( !file_exists($file) ){
-		$file = dirname(__FILE__)."/../../vendor/$class.php";
-		if( !file_exists($file) ){
-			echo "there's no class : $class , $file";
-			return 0;
+
+define("FHC_ROOT",realpath(dirname(__FILE__)."/../../")."/");
+
+spl_autoload_register(function($class_str){
+	$find = function ($path){
+		$path=FHC_ROOT.$path;
+		if( file_exists($path) ){
+			require_once($path);
+			return true;
 		}
+		return false;
+	};
+	// Load FHC-Framework
+	$class_name = str_replace("\\","/",$class_str);
+	$path = "/lib/core/$class_name.php";
+
+	$globi=0;
+	while( !$find_flag = $find($path) ){
+		if( $globi == 0 ){
+			$glob_list = array();
+			$glob_list += glob(FHC_ROOT."app", GLOB_ONLYDIR);
+			$glob_list += glob(FHC_ROOT."vendor", GLOB_ONLYDIR);
+			$glob_n = count($glob_list);
+		}
+		if( $globi == $glob_n ) break;
+		$path = $glob_list[$globi]."/$class_name.php";
+		echo $path;
 	}
-	require_once($file);
+
+	if( $find_flag == false ){
+		die("no class : `$class_name`");
+	}
 });
 ?>
