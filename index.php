@@ -4,7 +4,10 @@ require_once "lib/core/AutoLoader.php";
 /**
  * Load .env
  */
-Dotenv::load(__DIR__);
+try{
+	FHC\Dotenv::load(__DIR__);
+}catch(Exception $e){
+}
 
 /**
  * FHC-Framework Router starts from here
