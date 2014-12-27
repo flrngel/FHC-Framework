@@ -19,8 +19,8 @@ spl_autoload_register(function($class_str){
 	while( !$find_flag = $find($path) ){
 		if( $globi == 0 ){
 			$glob_list = array();
-			$glob_list += glob(FHC_ROOT."app", GLOB_ONLYDIR);
-			$glob_list += glob(FHC_ROOT."vendor", GLOB_ONLYDIR);
+			$glob_list += glob("app/*", GLOB_ONLYDIR);
+			$glob_list += glob("vendor/*", GLOB_ONLYDIR);
 			$glob_n = count($glob_list);
 		}
 		if( $globi == $glob_n ) break;
