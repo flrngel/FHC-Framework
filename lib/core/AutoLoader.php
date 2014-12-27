@@ -25,7 +25,7 @@ spl_autoload_register(function($class_str){
 		}
 		if( $globi == $glob_n ) break;
 		$path = $glob_list[$globi]."/$class_name.php";
-		echo $path;
+		$globi++;
 	}
 
 	if( $find_flag == false ){
